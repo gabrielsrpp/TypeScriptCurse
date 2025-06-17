@@ -85,3 +85,54 @@ console.log(modernGreeting("Tio")); // Saída: "Ola Tio, tudo bem"
 console.log(modernGreeting("Paulo", "Dr.")); // Saída: "Ola Dr. Paulo, tudo bem"
 
 // 7 - parametro default
+
+function someDefault(n: number, m = 10): number {
+    return n + m
+}
+
+console.log(someDefault(10))
+console.log(someDefault(15,12))
+
+// 8 - unknow
+
+function doSomething(x: unknown) {
+    if(Array.isArray(x)) {
+        console.log(x[0])
+    } else if(typeof x === "number") {
+        console.log("x é um numero")
+    }
+}
+
+doSomething([1,2,3])
+doSomething(5)
+
+// 9 - Tipo never
+
+// function showErrorMessage(msg: string) : never {          /// tive que mencionar esta função para continuar exibindo os outros codigos no log ///
+//     throw new Error(msg)
+// }
+
+// showErrorMessage("fowejfiwe")
+
+// // 10 - rest operator
+
+function somTds(...num: number[]) {
+    return num.reduce((acc, curr) => acc + curr);
+}
+
+console.log(somTds(1, 2, 3, 4, 5)); // 15
+console.log(somTds(123, 456, 78910)); // 79489
+// console.log(somTds(["teste"])) tenque ser number
+
+// 11 - destructuring como parametro
+
+function showProductDetails({name, price}  : {name: string, price: number}) : string {
+    return `o nome do produto é ${name} e ele custa R$${price}`
+}
+
+const shirt = {name: "camisa",  price: 49.99}
+
+console.log(showProductDetails(shirt))
+// console.log(showProductDetails({name: "teste", age: 30}))
+// console.log(showProductDetails([1,2]))
+
