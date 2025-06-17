@@ -128,3 +128,5 @@ function showReview(review: number | boolean) {
         console.log("O usuário não deixou uma review.");
     }
 }
+
+
