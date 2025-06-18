@@ -143,3 +143,27 @@ myArray = myArray.map((item) => {
 console.log(myArray)
 
 // myArray[0] = "teste" // modificações diretas não são permitidas
+
+// 8 - Tuplas
+
+type fiveNumbers = [number,number,number,number,number]
+
+// number[]
+
+const myNumberArray: fiveNumbers = [1,2,3,4,5]
+// const myNumberArray2: fiveNumbers = [1,2,3,4,5,6]
+// const mixedArray: fiveNumbers = [1, true, "teste", 4,  5] // só um tipo
+
+console.log(myNumberArray)
+
+type nameAndAge = [string, number]
+
+const anotherUser = ["Teste", 30]
+
+console.log(anotherUser[0])
+
+anotherUser[0] = "João"
+
+console.log(anotherUser[0])
+
+// anotherUser[1] = "teste" /// só vai funcionar com os tipos tipados na tupla

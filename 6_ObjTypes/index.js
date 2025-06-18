@@ -62,3 +62,13 @@ myArray = myArray.map(function (item) {
     return "Frutas: ".concat(item);
 });
 console.log(myArray);
+// number[]
+var myNumberArray = [1, 2, 3, 4, 5];
+// const myNumberArray2: fiveNumbers = [1,2,3,4,5,6]
+// const mixedArray: fiveNumbers = [1, true, "teste", 4,  5] // só um tipo
+console.log(myNumberArray);
+var anotherUser = ["Teste", 30];
+console.log(anotherUser[0]);
+anotherUser[0] = "João";
+console.log(anotherUser[0]);
+// anotherUser[1] = "teste" /// só vai funcionar com os tipos tipados na tupla
