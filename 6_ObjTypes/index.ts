@@ -178,3 +178,4 @@ function showNumbers(numbers: readonly[number,number]) {
 }
 
 showNumbers([1,2])
+
