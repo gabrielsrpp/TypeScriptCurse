@@ -23,3 +23,9 @@ const u1 = { email: "gabriel@email.com", role: "Admin" };
 const u2 = { email: "joao@email.com" };
 showUserDetails(u1);
 showUserDetails(u2);
+const fusca = {
+    brand: "VW",
+    wheels: 4
+};
+console.log(fusca);
+// fusca.wheels = 5 // melhor usar o readonly
