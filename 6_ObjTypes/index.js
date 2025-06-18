@@ -72,3 +72,9 @@ console.log(anotherUser[0]);
 anotherUser[0] = "João";
 console.log(anotherUser[0]);
 // anotherUser[1] = "teste" /// só vai funcionar com os tipos tipados na tupla
+//  9 - tuplas com readonly
+function showNumbers(numbers) {
+    console.log(numbers[0]);
+    console.log(numbers[1]);
+}
+showNumbers([1, 2]);

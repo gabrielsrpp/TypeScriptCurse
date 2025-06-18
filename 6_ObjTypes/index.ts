@@ -152,7 +152,7 @@ type fiveNumbers = [number,number,number,number,number]
 
 const myNumberArray: fiveNumbers = [1,2,3,4,5]
 // const myNumberArray2: fiveNumbers = [1,2,3,4,5,6]
-// const mixedArray: fiveNumbers = [1, true, "teste", 4,  5] // só um tipo
+// const mixedArray: fiveNumbers = [1, true, "teste", 4,  5] // só um tipo string, number etc por exemplo
 
 console.log(myNumberArray)
 
@@ -167,3 +167,14 @@ anotherUser[0] = "João"
 console.log(anotherUser[0])
 
 // anotherUser[1] = "teste" /// só vai funcionar com os tipos tipados na tupla
+
+
+//  9 - tuplas com readonly
+
+function showNumbers(numbers: readonly[number,number]) {
+   //  numbers[0] = 10 // evidenciar se consegue alterar o valor
+    console.log(numbers[0])
+    console.log(numbers[1])
+}
+
+showNumbers([1,2])
