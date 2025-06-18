@@ -1,12 +1,11 @@
-"use strict";
 // 1 - tipo de objeto para função com interface
 function showProductDetails(product) {
-    console.log(`O nome do produto é ${product.name} seu preço é R$ ${product.price}`);
+    console.log("O nome do produto \u00E9 ".concat(product.name, " seu pre\u00E7o \u00E9 R$ ").concat(product.price));
     if (product.isAvaiable) {
         console.log("O produto esta disponivel");
     }
 }
-const shirt = {
+var shirt = {
     name: "Camisa",
     price: 19.99,
     isAvaiable: true
@@ -14,18 +13,22 @@ const shirt = {
 showProductDetails(shirt);
 showProductDetails({ name: "Tenis", price: 129.99, isAvaiable: false });
 function showUserDetails(user) {
-    console.log(`O usuario tem o e-mail: ${user.email}`);
+    console.log("O usuario tem o e-mail: ".concat(user.email));
     if (user.role) {
-        console.log(`A função do usuario é: ${user.role}`);
+        console.log("A fun\u00E7\u00E3o do usuario \u00E9: ".concat(user.role));
     }
 }
-const u1 = { email: "gabriel@email.com", role: "Admin" };
-const u2 = { email: "joao@email.com" };
+var u1 = { email: "gabriel@email.com", role: "Admin" };
+var u2 = { email: "joao@email.com" };
 showUserDetails(u1);
 showUserDetails(u2);
-const fusca = {
+var fusca = {
     brand: "VW",
     wheels: 4
 };
 console.log(fusca);
-// fusca.wheels = 5 // melhor usar o readonly
+var coords = {
+    x: 10
+};
+coords.y = 15;
+console.log(coords);

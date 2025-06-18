@@ -55,5 +55,21 @@ const fusca:Car = {
 }
 
 console.log(fusca)
-
 // fusca.wheels = 5 // melhor usar o readonly
+
+
+// 4 - Index Signature
+
+interface CoordObject {
+    [index: string]: number // seguir este padrão que foi definido
+}
+
+let coords: CoordObject = {
+    x:10
+}
+
+coords.y = 15
+
+console.log(coords)
+
+// coords.z = "teste" // não segue o padrão
