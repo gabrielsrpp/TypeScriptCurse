@@ -101,3 +101,25 @@ const superHumano: SuperHuman = {
 console.log(superHumano)
 console.log(superHumano.superpowers[1])
 
+// 6 - intersection types
+
+interface Character {
+    name: string
+}
+
+interface Gun {
+    type: string
+    caliber: number
+}
+
+type HumanWithGun = Character & Gun
+
+const arnold: HumanWithGun = {
+    name:"Arnold",
+    type:"Shotgun",
+    caliber: 12
+}
+
+console.log(arnold)
+
+console.log(arnold.caliber)
