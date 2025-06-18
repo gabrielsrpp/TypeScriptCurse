@@ -73,3 +73,31 @@ coords.y = 15
 console.log(coords)
 
 // coords.z = "teste" // não segue o padrão
+
+// 5 - Extending Types
+
+interface Human {
+    name: string
+    age: number
+}
+
+interface SuperHuman extends Human {
+    superpowers: string[]
+}
+
+const humano: Human = {
+    name: "Teste",
+    age: 30
+}
+
+console.log(humano)
+
+const superHumano: SuperHuman = {
+    name: "Teste",
+    age: 50,
+    superpowers: ["Kamehameha", "Genki Dama"]
+}
+
+console.log(superHumano)
+console.log(superHumano.superpowers[1])
+
