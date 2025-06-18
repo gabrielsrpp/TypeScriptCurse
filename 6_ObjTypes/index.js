@@ -51,3 +51,14 @@ var arnold = {
 };
 console.log(arnold);
 console.log(arnold.caliber);
+// 7 - Readonly array
+var myArray = ["Maça", "Laranja", "Banana"];
+// myArray[3] = "Mamão"
+console.log(myArray);
+myArray.forEach(function (item) {
+    console.log("Fruta: " + item);
+});
+myArray = myArray.map(function (item) {
+    return "Frutas: ".concat(item);
+});
+console.log(myArray);
