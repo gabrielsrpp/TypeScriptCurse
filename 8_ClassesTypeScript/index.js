@@ -96,3 +96,21 @@ var volvo = new Truck("Volvo", 400);
 var scania = new Truck("Scania", 500);
 volvo.showDetails();
 scania.showDetails();
+// 7 - Utilizando getters
+var Person = /** @class */ (function () {
+    function Person(name, surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+    Object.defineProperty(Person.prototype, "fullName", {
+        get: function () {
+            return this.name + " " + this.surname;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Person;
+}());
+var testeTESTE = new Person("teste", "TESTE");
+console.log(testeTESTE.name);
+console.log(testeTESTE.fullName);
