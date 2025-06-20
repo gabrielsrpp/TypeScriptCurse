@@ -29,4 +29,30 @@ const server = {
     ram: '32GB'
 };
 console.log(getSomeKey(server, 'ram'));
-// console.log(getSomeKey(server, 'teste')) // tenque estar presente no objeto
+function showCharName(obj, name) {
+    return `${obj[name]}`;
+}
+const myChar = {
+    name: "Paulo",
+    age: 30,
+    hasDriveLicense: true
+};
+console.log(showCharName(myChar, 'name'));
+// 6 - typeof type operator
+const userName = "Mathues";
+const userName2 = "João";
+const userName4 = "Joaquim";
+const newTruck = {
+    km: 10000,
+    kg: 5000,
+    description: "Caminha para pouca carga"
+};
+function showKm(km) {
+    console.log(`O veiculo tem a km de: ${km}`);
+}
+showKm(newTruck.km);
+const newCar = {
+    km: 5000,
+    kg: 1000
+};
+showKm(newCar.km);
