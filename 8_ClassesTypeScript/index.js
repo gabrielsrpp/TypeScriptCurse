@@ -351,3 +351,16 @@ var AbstractExample = /** @class */ (function (_super) {
 }(AbstractClass));
 var newAbstractObject = new AbstractExample("Paulo");
 newAbstractObject.showName();
+// 19 - relação entre classes
+var Dog = /** @class */ (function () {
+    function Dog() {
+    }
+    return Dog;
+}());
+var Cat = /** @class */ (function () {
+    function Cat() {
+    }
+    return Cat;
+}());
+var doguinho = new Cat();
+console.log(doguinho);
