@@ -289,3 +289,34 @@ console.log(typeof newItem.showFirst);
 var secondItem = new item(12, true);
 console.log(secondItem.showFirst);
 console.log(typeof secondItem.first);
+// 16 - parameter properties
+var ParameterProperties = /** @class */ (function () {
+    function ParameterProperties(name, qty, price) {
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+    }
+    Object.defineProperty(ParameterProperties.prototype, "showQty", {
+        get: function () {
+            return "Qtd total: ".concat(this.qty);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ParameterProperties.prototype, "showPrice", {
+        get: function () {
+            return " Qtd total: ".concat(this.price);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return ParameterProperties;
+}());
+var newShirt = new ParameterProperties("camisa", 5, 19.99);
+console.log(newShirt.name);
+// console.log(newShirt.price)
+console.log(newShirt.showPrice);
+console.log(newShirt.showQty);

@@ -342,3 +342,35 @@ const secondItem = new item(12, true)
 
 console.log(secondItem.showFirst)
 console.log(typeof secondItem.first)
+
+
+// 16 - parameter properties
+
+class ParameterProperties {
+
+    constructor (public name: string, private qty: number, private price: number) {
+
+        this.name = name
+        this.qty = qty
+        this.price = price
+
+    }
+
+    get showQty() {
+        return `Qtd total: ${this.qty}`
+    }
+
+    get showPrice() {
+        return ` Qtd total: ${this.price}`
+    }
+}
+
+const newShirt = new ParameterProperties("camisa", 5, 19.99)
+
+console.log(newShirt.name)
+
+// console.log(newShirt.price)
+
+console.log(newShirt.showPrice)
+
+console.log(newShirt.showQty)
