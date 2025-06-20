@@ -255,3 +255,15 @@ var pObj = new PrivateClass();
 console.log(pObj.showName());
 // console.log(pObj.privateMethod())
 pObj.showPrivateMethod();
+// 14 Static Members
+var StaticMembers = /** @class */ (function () {
+    function StaticMembers() {
+    }
+    StaticMembers.staticMethod = function () {
+        console.log("Este é um metodo estatico");
+    };
+    StaticMembers.prop = "Teste static";
+    return StaticMembers;
+}());
+console.log(StaticMembers.prop);
+StaticMembers.staticMethod();
