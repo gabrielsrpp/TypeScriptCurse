@@ -78,3 +78,23 @@ const destroyer = new KillerMachine("Destroyer", 4)
 
 console.log(trator)
 console.log(destroyer)
+
+// 5 - Metodos
+
+class Dwarf {
+    name
+
+    constructor(name:string) {
+        this.name = name
+    }
+
+    greeting() {
+        console.log("Hew stranger!!!!!!!!!")
+    }
+}
+
+const   jimmy = new Dwarf("Jimmy")
+
+console.log(jimmy.name)
+
+jimmy.greeting()

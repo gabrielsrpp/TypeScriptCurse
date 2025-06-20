@@ -68,3 +68,16 @@ var KillerMachine = /** @class */ (function (_super) {
 var destroyer = new KillerMachine("Destroyer", 4);
 console.log(trator);
 console.log(destroyer);
+// 5 - Metodos
+var Dwarf = /** @class */ (function () {
+    function Dwarf(name) {
+        this.name = name;
+    }
+    Dwarf.prototype.greeting = function () {
+        console.log("Hew stranger!!!!!!!!!");
+    };
+    return Dwarf;
+}());
+var jimmy = new Dwarf("Jimmy");
+console.log(jimmy.name);
+jimmy.greeting();
