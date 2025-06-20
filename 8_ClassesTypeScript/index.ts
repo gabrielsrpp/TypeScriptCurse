@@ -236,7 +236,9 @@ const myObject = new Nova()
 
 myObject.someMethod()
 
-// 10 - Visibilidade : public
+// 10 - Visibilidade 
+
+// 11 - Visibilidade - pulic
 
 class C {
     public x = 10
@@ -253,3 +255,20 @@ console.log(cInstance.x)
 const dInstance = new D()
 
 console.log(dInstance.x)
+
+// 12 - protected
+class E {
+    protected x = 10
+
+
+}
+
+class F extends E {
+    showX() {
+        console.log("X: " + this.x)
+    }
+}
+
+const fInstance = new F()
+
+fInstance.showX()
