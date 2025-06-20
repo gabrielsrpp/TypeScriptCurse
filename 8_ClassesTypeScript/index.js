@@ -320,3 +320,13 @@ console.log(newShirt.name);
 // console.log(newShirt.price)
 console.log(newShirt.showPrice);
 console.log(newShirt.showQty);
+// 17 - class expressions
+var myClass = /** @class */ (function () {
+    function class_1(name) {
+        this.name = name;
+    }
+    return class_1;
+}());
+var pessoa = new myClass("Teste");
+console.log(pessoa);
+console.log(pessoa.name);
