@@ -155,3 +155,23 @@ myCoords.fillY = 0; // Isso não altera o valor de y, pois é 0
 myCoords.fillY = 10;
 console.log(myCoords);
 console.log(myCoords.getCoords);
+var blogPost = /** @class */ (function () {
+    function blogPost(title) {
+        this.title = title;
+    }
+    blogPost.prototype.itemTitle = function () {
+        return "O titulo do post \u00E9 ".concat(this.title);
+    };
+    return blogPost;
+}());
+var myPost = new blogPost("Hello Word");
+console.log(myPost.itemTitle());
+var TestingInterface = /** @class */ (function () {
+    function TestingInterface(title) {
+        this.title = title;
+    }
+    TestingInterface.prototype.itemTitle = function () {
+        return "O titulo \u00E9:  ".concat(this.title);
+    };
+    return TestingInterface;
+}());
