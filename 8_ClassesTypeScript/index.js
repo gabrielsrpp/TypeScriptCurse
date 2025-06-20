@@ -81,3 +81,18 @@ var Dwarf = /** @class */ (function () {
 var jimmy = new Dwarf("Jimmy");
 console.log(jimmy.name);
 jimmy.greeting();
+// 6 - this
+var Truck = /** @class */ (function () {
+    function Truck(model, hp) {
+        this.model = model;
+        this.hp = hp;
+    }
+    Truck.prototype.showDetails = function () {
+        console.log("Caminh\u00E3o do modelo : ".concat(this.model, ", que tem ").concat(this.hp, " cavalos de pot\u00EAncia"));
+    };
+    return Truck;
+}());
+var volvo = new Truck("Volvo", 400);
+var scania = new Truck("Scania", 500);
+volvo.showDetails();
+scania.showDetails();
