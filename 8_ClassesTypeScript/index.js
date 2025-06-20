@@ -114,3 +114,44 @@ var Person = /** @class */ (function () {
 var testeTESTE = new Person("teste", "TESTE");
 console.log(testeTESTE.name);
 console.log(testeTESTE.fullName);
+// 8 - Utilizando setters
+var Coords = /** @class */ (function () {
+    function Coords() {
+    }
+    Object.defineProperty(Coords.prototype, "fillX", {
+        set: function (x) {
+            if (x === 0) {
+                return;
+            }
+            this.x = x;
+            console.log("X inserido com sucesso");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Coords.prototype, "fillY", {
+        set: function (y) {
+            if (y === 0) {
+                return;
+            }
+            this.y = y;
+            console.log("Y inserido com sucesso");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Coords.prototype, "getCoords", {
+        get: function () {
+            return "X: ".concat(this.x, " e Y: ").concat(this.y);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Coords;
+}());
+var myCoords = new Coords();
+myCoords.fillX = 15;
+myCoords.fillY = 0; // Isso não altera o valor de y, pois é 0
+myCoords.fillY = 10;
+console.log(myCoords);
+console.log(myCoords.getCoords);
