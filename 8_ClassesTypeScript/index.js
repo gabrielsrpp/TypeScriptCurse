@@ -330,3 +330,24 @@ var myClass = /** @class */ (function () {
 var pessoa = new myClass("Teste");
 console.log(pessoa);
 console.log(pessoa.name);
+// 18 - abstract class
+var AbstractClass = /** @class */ (function () {
+    function AbstractClass() {
+    }
+    return AbstractClass;
+}());
+// const newObj = new AbstractClass(); // não pdoe criar uma instancia de uma classe abstrata
+var AbstractExample = /** @class */ (function (_super) {
+    __extends(AbstractExample, _super);
+    function AbstractExample(name) {
+        var _this = _super.call(this) || this;
+        _this.name = name;
+        return _this;
+    }
+    AbstractExample.prototype.showName = function () {
+        console.log("o nome \u00E9: ".concat(this.name));
+    };
+    return AbstractExample;
+}(AbstractClass));
+var newAbstractObject = new AbstractExample("Paulo");
+newAbstractObject.showName();

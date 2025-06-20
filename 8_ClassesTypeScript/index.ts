@@ -390,3 +390,28 @@ const pessoa = new myClass("Teste");
 console.log(pessoa);
 
 console.log(pessoa.name);
+
+// 18 - abstract class
+
+abstract class AbstractClass {
+    abstract showName(): void
+}
+
+// const newObj = new AbstractClass(); // não pdoe criar uma instancia de uma classe abstrata
+
+class AbstractExample extends AbstractClass {
+    name: string;
+
+    constructor(name: string) {
+        super();
+        this.name = name;
+    }
+
+    showName() {
+        console.log(`o nome é: ${this.name}`);
+    }
+}
+
+const newAbstractObject = new AbstractExample("Paulo")
+
+newAbstractObject.showName();
