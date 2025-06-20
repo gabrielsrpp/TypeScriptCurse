@@ -175,3 +175,24 @@ var TestingInterface = /** @class */ (function () {
     };
     return TestingInterface;
 }());
+// 9 - Override de métodos
+var Base = /** @class */ (function () {
+    function Base() {
+    }
+    Base.prototype.someMethod = function () {
+        console.log("alguma coisa");
+    };
+    return Base;
+}());
+var Nova = /** @class */ (function (_super) {
+    __extends(Nova, _super);
+    function Nova() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Nova.prototype.someMethod = function () {
+        console.log("testando outra coisa");
+    };
+    return Nova;
+}(Base));
+var myObject = new Nova();
+myObject.someMethod();
