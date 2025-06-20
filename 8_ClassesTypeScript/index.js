@@ -267,3 +267,25 @@ var StaticMembers = /** @class */ (function () {
 }());
 console.log(StaticMembers.prop);
 StaticMembers.staticMethod();
+// 15 - generic class
+var item = /** @class */ (function () {
+    function item(first, second) {
+        this.first = first;
+        this.second = second;
+    }
+    Object.defineProperty(item.prototype, "showFirst", {
+        get: function () {
+            return "O first \u00E9: ".concat(this.first);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return item;
+}());
+var newItem = new item("caixa", "surpresa");
+console.log(newItem);
+console.log(newItem.showFirst);
+console.log(typeof newItem.showFirst);
+var secondItem = new item(12, true);
+console.log(secondItem.showFirst);
+console.log(typeof secondItem.first);
