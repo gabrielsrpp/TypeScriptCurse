@@ -256,7 +256,7 @@ const dInstance = new D()
 
 console.log(dInstance.x)
 
-// 12 - protected
+// 12 - Visibilidade : protected
 class E {
     protected x = 10
 
@@ -272,3 +272,29 @@ class F extends E {
 const fInstance = new F()
 
 fInstance.showX()
+
+// 13  - Visibilidade : private
+
+class PrivateClass {
+    private name = "Private"
+
+    showName() {
+        return this.name
+    }
+
+    private privateMethod() {
+        console.log("Metodo privado")
+    }
+
+    showPrivateMethod() {
+        this.privateMethod()
+    }
+}
+
+const pObj = new PrivateClass()
+
+// console.log(pObj.name)
+
+console.log(pObj.showName())
+// console.log(pObj.privateMethod())
+pObj.showPrivateMethod()

@@ -215,7 +215,7 @@ var cInstance = new C();
 console.log(cInstance.x);
 var dInstance = new D();
 console.log(dInstance.x);
-// 12 - protected
+// 12 - Visibilidade : protected
 var E = /** @class */ (function () {
     function E() {
         this.x = 10;
@@ -234,3 +234,24 @@ var F = /** @class */ (function (_super) {
 }(E));
 var fInstance = new F();
 fInstance.showX();
+// 13  - Visibilidade : private
+var PrivateClass = /** @class */ (function () {
+    function PrivateClass() {
+        this.name = "Private";
+    }
+    PrivateClass.prototype.showName = function () {
+        return this.name;
+    };
+    PrivateClass.prototype.privateMethod = function () {
+        console.log("Metodo privado");
+    };
+    PrivateClass.prototype.showPrivateMethod = function () {
+        this.privateMethod();
+    };
+    return PrivateClass;
+}());
+var pObj = new PrivateClass();
+// console.log(pObj.name)
+console.log(pObj.showName());
+// console.log(pObj.privateMethod())
+pObj.showPrivateMethod();
