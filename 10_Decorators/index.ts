@@ -262,3 +262,46 @@ const newPost = new Post();
 newPost.post("Meu primeiro Post!", newPost.alereadyPosted);
 
 newPost.post("Meu segundo Post!", newPost.alereadyPosted); // vai ser bloqueado pois foi feito para que : se um ja foi postado ele bloqueia
+
+// 9 - exemplo real com property  decorator
+
+
+function Max(limit: number) {
+    return function(target: Object, propertKey: string) {
+        let value:string
+
+        const getter = function() {
+            return value
+        }
+
+        const setter = function(newVal: string) {
+            if(newVal.length > limit) {
+                console.log(`O valor deve ter no maximo ${limit} digitos.`)
+                return
+            } else {
+                value = newVal
+            }
+        }
+
+        Object.defineProperty(target, propertKey, {
+            get: getter,
+            set: setter,
+        })
+    }
+}
+
+class Admin {
+
+    @Max(10)
+
+    username
+
+    constructor(username: string ) {
+        this.username = username;
+    }
+}
+
+let pedro = new Admin("pedroadmin12345");
+let lee = new Admin("lee");
+
+console.log(lee);
