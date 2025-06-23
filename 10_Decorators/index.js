@@ -85,3 +85,31 @@ __decorate([
 const trator = new Machine("Trator");
 trator.showName();
 console.log(trator.showName());
+// 5 - acessor decorator
+function enumerable1(value) {
+    return function (target, propertyKey, descriptor) {
+        descriptor.enumerable = value;
+    };
+}
+class Monster {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    get showName() {
+        return `Nome do monstro: ${this.name}`;
+    }
+    get showAge() {
+        return `Idade do monstro é: ${this.age}`;
+    }
+}
+__decorate([
+    enumerable1(true)
+], Monster.prototype, "showName", null);
+__decorate([
+    enumerable1(true)
+], Monster.prototype, "showAge", null);
+const charmander = new Monster("Charmander", 10);
+// Saídas esperadas:
+console.log(charmander.showName);
+console.log(charmander.showAge);
