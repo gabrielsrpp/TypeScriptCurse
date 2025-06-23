@@ -153,3 +153,37 @@ const charmander = new Monster("Charmander", 10);
 // Saídas esperadas:
 console.log(charmander.showName);
 console.log(charmander.showAge);
+
+// 6 - property decorators
+// 1 - 00001
+
+function formatNumber() {
+    return function(target: Object, propertKey: string) {
+        let value: string
+
+        const getter = function() {
+            return value
+        };
+
+        const setter = function(newVal: string) {
+            value = newVal.padStart(5, "0");
+        };
+        Object.defineProperty(target, propertKey, {
+            set: setter,
+            get: getter,
+        });
+    }
+}
+class ID {
+    @formatNumber()
+    id;
+
+    constructor(id: string) {
+        this.id = id;
+    }
+}
+
+const newItem = new ID("1");
+
+console.log(newItem.id);
+
