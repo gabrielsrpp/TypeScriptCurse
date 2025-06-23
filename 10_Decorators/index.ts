@@ -221,3 +221,44 @@ console.log(newBook);
 console.log(pen);
 
 console.log(newBook.createdAt);
+
+
+// 8 - exemplo real method decorator
+
+function checkIfUserPosted() {
+    return function (
+        target: Object,
+        key: string | Symbol,
+        descriptor: PropertyDescriptor
+    ) {
+        const childFunction = descriptor.value;
+        // console.log(childFunction);
+        descriptor.value = function(...args: any[]) {
+            if(args[1] === true) {
+                console.log("Usuario ja postou!")
+                return null
+            }else {
+                return childFunction.apply(this, args)
+            }
+        }
+
+        return descriptor
+    }
+}
+
+
+class Post {
+    alereadyPosted = false
+
+    @checkIfUserPosted()
+    post(content:string, alereadyPosted: boolean) {
+        this.alereadyPosted = true
+        console.log(`Post do usuario: ${content}`);
+    }
+}
+
+const newPost = new Post();
+
+newPost.post("Meu primeiro Post!", newPost.alereadyPosted);
+
+newPost.post("Meu segundo Post!", newPost.alereadyPosted); // vai ser bloqueado pois foi feito para que : se um ja foi postado ele bloqueia
