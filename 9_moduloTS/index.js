@@ -55,3 +55,11 @@ const myNumbers = __importStar(require("./numbers"));
 console.log(myNumbers);
 const nX = myNumbers.n1;
 console.log(nX);
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+const joao = new User("João", 25);
+console.log(joao);
