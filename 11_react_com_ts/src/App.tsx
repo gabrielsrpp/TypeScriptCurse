@@ -13,6 +13,9 @@ import Destructuring, { Category } from './components/Destructuring';
 // 6 - useState
 import State from './components/State';
 
+// 10 -  utilizando context
+import Context from './components/Context';
+
 // 9 - context (fora da função)
 interface IAppContext {
   language: string;
@@ -81,6 +84,7 @@ function App() {
 
         {myText && <p>Tem texto na variável</p>}
         {mySecondText && <p>Tem texto na segunda variável</p>}
+        <Context />
       </div>
     </AppContext.Provider>
   );
