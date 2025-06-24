@@ -1,3 +1,7 @@
+
+// context é utilizado por exemplo para authenticação do usuario
+
+
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -22,6 +26,16 @@ const userGreeting = (name: string): string => {
   return `Olá, ${name}!`;
 };
 
+// 8 - type
+type textOrNull = string | null
+const myText:textOrNull = "Tem algum texto aqui"
+let mySecondText: textOrNull = null;
+type fixed = "Isso" | "Ou" | "Aquio";
+
+// mySecondText = "opa";
+const testandoFixed:fixed = "Isso"
+
+
 
   return (
     <div className="App">
@@ -35,6 +49,8 @@ const userGreeting = (name: string): string => {
       <Destructuring title='Primeiro Post' content='Algum conteudo'commentsQty={10}tags={["ts", "js"]}category={Category.TS}/>
       <Destructuring title='Segundo Post' content='Mais outro conteudo'commentsQty={10}tags={["Python"]}category={Category.P}/>
       <State/>
+       {myText && <p>Tem texto na variavel</p>}
+        {mySecondText && <p>Tem texto na variavel</p>}
     </div>
   );
 }
