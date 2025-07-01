@@ -2,7 +2,7 @@
 // console.log("Express + TS!!!");
 
 // 2 - init express
-import express from "express"
+import express, {Request, Response} from "express"
 
 const app = express();
 
@@ -36,6 +36,12 @@ app.all("/api/product/check", (req, res) => {
     } else {
         res.send("Não podemos realizar esta operação");
     }
+});
+
+// 5 - interface do express
+app.get("/api/interfaces", (req: Request, res: Response) => {
+
+    res.send("Utilizando as interfaces");
 });
 
 
