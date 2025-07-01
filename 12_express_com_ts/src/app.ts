@@ -24,6 +24,21 @@ app.post("/api/product", (req, res) => {
     res.send("Produto adicionado !");
 });
 
+// 4 - rota para todos os verbos All
+
+
+app.all("/api/product/check", (req, res) => {
+    // req.method = VERBO HTTP
+    if (req.method === "POST") {
+        res.send("Inseriu algum registro");
+    } else if (req.method === "GET") {
+        res.send("Leu algum registro!");
+    } else {
+        res.send("Não podemos realizar esta operação");
+    }
+});
+
+
 app.listen(3000, () => {
     console.log ("Aplicação de TS + Express funcionando !");
 });
