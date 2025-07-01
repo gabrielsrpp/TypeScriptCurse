@@ -76,6 +76,16 @@ app.get("/api/product/:id", (req: Request, res: Response) => {
     res.send("Produto não encontrado");
 });
 
+// 8 - rotas complexas
+app.get("/api/product/:id/review/:reviewId", (req: Request, res: Response) => {
+    console.log(req.params);
+
+    const productId = req.params.id;
+    const reviewId = req.params.id;
+
+    res.send(`Acessando a review ${reviewId} do produto ${productId}`);
+});
+
 app.listen(3000, () => {
     console.log ("Aplicação de TS + Express funcionando !");
 });
