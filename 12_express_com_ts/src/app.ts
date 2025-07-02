@@ -2,7 +2,7 @@
 // console.log("Express + TS!!!");
 
 // 2 - init express
-import express, {Request, Response} from "express"
+import express, {NextFunction, Request, Response} from "express"
 
 const app = express();
 
@@ -94,9 +94,22 @@ function getUser(req: Request, res: Response) {
     res.send("O usuario foi encontrado !");
 }
 
-
-
 app.get("/api/user/:id", getUser);
+
+
+// 10 - middleware
+function checkUser(req: Request, res: Response, next: NextFunction) {
+    if(req.params.id === "1") {
+        console.log("pode seguir!");
+    next();
+ } else {
+    console.log("Acesso restrito!");
+}
+}
+
+app.get("/api/user/:id/access", checkUser, (req: Request, res: Response) => {
+    res.json({ msg: "Bem-vindo a área administrativa!"});
+});
 
 
 app.listen(3000, () => {
