@@ -36,3 +36,46 @@ const name = 'Paulo'
 
 console.log(name)
 
+// 2 - arrow function
+const sum = function sum(a,b) {
+    return a + b
+}
+
+const arrowSum =  (a,b) => a + b
+
+console.log(sum(5,5))
+console.log(arrowSum(5,5))
+
+const greeting = (name) => {
+    if(name) {
+        return 'Ola' + + '1'
+    } else {
+        return 'Ola!'
+    }
+}
+
+console.log(greeting('Paulo'))
+console.log(greeting())
+
+const testeArrow = () => console.log('testou!')
+
+testeArrow()
+
+const user = {
+    name: "Teste",
+    sayUserName() {
+        setTimeout(function() {
+            console.log(this)
+            console.log("Username: " + this.name)
+        }, 500)
+    },
+    sayUserName() {
+        setTimeout(() => {
+            console.log(this)
+            console.log('Username: ' + this.name)
+        }, 700)
+    }
+}
+
+user.sayUserName()
+user.sayUserName()
