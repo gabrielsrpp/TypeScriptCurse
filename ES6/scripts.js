@@ -118,3 +118,9 @@ products.map((product) => {
 })
 
 console.log(products)
+
+// 5 templates literals
+const Username = 'Teste777'
+const age = 30
+
+console.log(`O nome de usuario é ${Username} e ele tem ${age} anos.`)
