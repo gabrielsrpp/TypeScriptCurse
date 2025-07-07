@@ -166,7 +166,7 @@ const car = { ...carName, ...carBrand, ...otherInfos, wheels: 4}
 
 console.log(car)
 
-// 8 CLASSE
+// 8 classe
 
 class Product {
     constructor(name, price) {
@@ -189,3 +189,41 @@ console.log(shirt.producWithDiscount(50))
 const tenis = new Product("Tenis verde", 120)
 
 console.log(tenis.producWithDiscount(20))
+
+// 9 Herança
+
+class Product2 {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    producWithDiscount(discount) {
+        return this.price - (this.price * (discount / 100));
+    }
+}
+
+class producWithDiscount extends Product {
+    constructor(name, price, colors) {
+        super(name, price);
+        this.colors = colors;
+    }
+
+    showColors() {
+        console.log("As cores são:");
+        this.colors.forEach((color) => {
+            console.log(color);
+        });
+    }
+}
+
+const hat = new producWithDiscount("Chapéu", 29.99, [
+    "Preto",
+    "Azul",
+    "Verde",
+]);
+
+console.log(hat.name);
+
+console.log(hat.producWithDiscount(30));
+hat.showColors();
